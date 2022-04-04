@@ -6,7 +6,6 @@
 <ul>
 <li>Daiara vieira Barbosa</li>
 <li>Jhonata lopes dos Santos</li>
-<li>Marcos Caetano dos Santos</li>
 <li>Marcos Vinicius dos Santos Ribeiro</li>
 <li>Renan Scarpato</li>
 </ul>
