@@ -166,13 +166,13 @@
                               <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                               <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jPasswordField1" min="-2" pref="231" max="-2" attributes="0"/>
+                              <Component id="txtSenha" min="-2" pref="231" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                              <Component id="jTextField1" min="-2" pref="231" max="-2" attributes="0"/>
+                              <Component id="txtLogin" min="-2" pref="231" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
@@ -203,11 +203,11 @@
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                      <Component id="jTextField1" linkSize="2" min="-2" pref="22" max="-2" attributes="0"/>
+                                      <Component id="txtLogin" linkSize="2" min="-2" pref="22" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                              <Component id="jPasswordField1" linkSize="2" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtSenha" linkSize="2" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="31" max="32767" attributes="0"/>
@@ -218,8 +218,9 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabel3">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField1">
+            <Component class="javax.swing.JTextField" name="txtLogin">
               <Properties>
+                <Property name="text" type="java.lang.String" value="admin"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
@@ -229,8 +230,9 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel2">
             </Component>
-            <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+            <Component class="javax.swing.JPasswordField" name="txtSenha">
               <Properties>
+                <Property name="text" type="java.lang.String" value="admin"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder/>
@@ -301,7 +303,6 @@
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/tela_login_raio.png"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="jLabel10"/>
           </Properties>
         </Component>
       </SubComponents>

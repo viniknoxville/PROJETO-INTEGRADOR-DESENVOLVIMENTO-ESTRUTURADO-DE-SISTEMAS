@@ -257,7 +257,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButton2" linkSize="1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jbtnRelatórios" linkSize="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jbtnVendasTelaPrincipall" linkSize="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jbtnProdutosTelaPrincipal" linkSize="1" min="-2" max="-2" attributes="0"/>
                           <Component id="jbtnUsuariosTelaPrincipal" linkSize="1" min="-2" max="-2" attributes="0"/>
@@ -279,7 +279,7 @@
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Component id="jbtnVendasTelaPrincipall" linkSize="3" min="-2" pref="60" max="-2" attributes="0"/>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton2" linkSize="3" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="jbtnRelatórios" linkSize="3" min="-2" pref="25" max="-2" attributes="0"/>
                       <EmptySpace pref="117" max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -357,10 +357,19 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnVendasTelaPrincipallActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton2">
+            <Component class="javax.swing.JButton" name="jbtnRelat&#xf3;rios">
               <Properties>
-                <Property name="text" type="java.lang.String" value="jButton2"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Arial" size="14" style="1"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/item_menu_sair.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Relat&#xf3;rios"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnRelat&#xf3;riosActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

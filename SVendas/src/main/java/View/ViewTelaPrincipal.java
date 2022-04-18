@@ -38,7 +38,7 @@ public class ViewTelaPrincipal extends javax.swing.JFrame {
         jbtnUsuariosTelaPrincipal = new javax.swing.JButton();
         jbtnProdutosTelaPrincipal = new javax.swing.JButton();
         jbtnVendasTelaPrincipall = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jbtnRelatórios = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -107,7 +107,14 @@ public class ViewTelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("jButton2");
+        jbtnRelatórios.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jbtnRelatórios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/item_menu_sair.png"))); // NOI18N
+        jbtnRelatórios.setText("Relatórios");
+        jbtnRelatórios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnRelatóriosActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -116,7 +123,7 @@ public class ViewTelaPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton2)
+                    .addComponent(jbtnRelatórios)
                     .addComponent(jbtnVendasTelaPrincipall)
                     .addComponent(jbtnProdutosTelaPrincipal)
                     .addComponent(jbtnUsuariosTelaPrincipal)
@@ -124,7 +131,7 @@ public class ViewTelaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(62, Short.MAX_VALUE))
         );
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButton2, jbtnClientesTelaPrincipal, jbtnProdutosTelaPrincipal, jbtnUsuariosTelaPrincipal, jbtnVendasTelaPrincipall});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jbtnClientesTelaPrincipal, jbtnProdutosTelaPrincipal, jbtnRelatórios, jbtnUsuariosTelaPrincipal, jbtnVendasTelaPrincipall});
 
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,13 +145,13 @@ public class ViewTelaPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jbtnVendasTelaPrincipall, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbtnRelatórios, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(117, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jbtnClientesTelaPrincipal, jbtnProdutosTelaPrincipal, jbtnUsuariosTelaPrincipal});
 
-        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jButton2, jbtnVendasTelaPrincipall});
+        jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jbtnRelatórios, jbtnVendasTelaPrincipall});
 
         jPanel3.setBackground(new java.awt.Color(0, 153, 153));
 
@@ -357,28 +364,32 @@ public class ViewTelaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jmenuSobreActionPerformed
 
     private void jmenuUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmenuUsuariosActionPerformed
-         new ViewUsuario().setVisible(true);
+         new ViewUsuario().setVisible(true); //chama a tela de usuario
     }//GEN-LAST:event_jmenuUsuariosActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        new ViewVendas().setVisible(true);
+        new ViewVendas().setVisible(true); //chama a tela de venda
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jbtnVendasTelaPrincipallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnVendasTelaPrincipallActionPerformed
-        new ViewVendas().setVisible(true);
+        new ViewVendas().setVisible(true); //chama a tela de venda
     }//GEN-LAST:event_jbtnVendasTelaPrincipallActionPerformed
 
     private void jbtnProdutosTelaPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnProdutosTelaPrincipalActionPerformed
-        new ViewProduto().setVisible(true);
+        new ViewProduto().setVisible(true); //chama a tela de produto
     }//GEN-LAST:event_jbtnProdutosTelaPrincipalActionPerformed
 
     private void jbtnUsuariosTelaPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnUsuariosTelaPrincipalActionPerformed
-        new ViewUsuario().setVisible(true);
+        new ViewUsuario().setVisible(true); //chama a tela de usuario
     }//GEN-LAST:event_jbtnUsuariosTelaPrincipalActionPerformed
 
     private void jbtnClientesTelaPrincipalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnClientesTelaPrincipalActionPerformed
         new ViewCliente().setVisible(true); // chamar cadastro de clientes
     }//GEN-LAST:event_jbtnClientesTelaPrincipalActionPerformed
+
+    private void jbtnRelatóriosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRelatóriosActionPerformed
+        new ViewRelatorio().setVisible(true); //chama o relatorio
+    }//GEN-LAST:event_jbtnRelatóriosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -416,7 +427,6 @@ public class ViewTelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -439,6 +449,7 @@ public class ViewTelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JButton jbtnClientesTelaPrincipal;
     private javax.swing.JButton jbtnProdutosTelaPrincipal;
+    private javax.swing.JButton jbtnRelatórios;
     private javax.swing.JButton jbtnUsuariosTelaPrincipal;
     private javax.swing.JButton jbtnVendasTelaPrincipall;
     private javax.swing.JMenuItem jmenuClientes;
