@@ -59,6 +59,8 @@ public class ViewTelaPrincipal extends javax.swing.JFrame {
         jmenuProdutos = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistema de Vendas ");
@@ -108,7 +110,7 @@ public class ViewTelaPrincipal extends javax.swing.JFrame {
         });
 
         jbtnRelatórios.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jbtnRelatórios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/item_menu_sair.png"))); // NOI18N
+        jbtnRelatórios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/botao_tela_inicial_relatorio2.png"))); // NOI18N
         jbtnRelatórios.setText("Relatórios");
         jbtnRelatórios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,7 +148,7 @@ public class ViewTelaPrincipal extends javax.swing.JFrame {
                 .addComponent(jbtnVendasTelaPrincipall, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jbtnRelatórios, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(117, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jbtnClientesTelaPrincipal, jbtnProdutosTelaPrincipal, jbtnUsuariosTelaPrincipal});
@@ -328,6 +330,17 @@ public class ViewTelaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu3.add(jMenuItem1);
+        jMenu3.add(jSeparator2);
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.SHIFT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMenuItem2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/item_menu_relatorio.png"))); // NOI18N
+        jMenuItem2.setText("Relátorio");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem2);
 
         jMenuBar1.add(jMenu3);
 
@@ -391,6 +404,10 @@ public class ViewTelaPrincipal extends javax.swing.JFrame {
         new ViewRelatorio().setVisible(true); //chama o relatorio
     }//GEN-LAST:event_jbtnRelatóriosActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        new ViewRelatorio().setVisible(true); //chama o relatorio
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -443,10 +460,12 @@ public class ViewTelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JButton jbtnClientesTelaPrincipal;
     private javax.swing.JButton jbtnProdutosTelaPrincipal;
     private javax.swing.JButton jbtnRelatórios;

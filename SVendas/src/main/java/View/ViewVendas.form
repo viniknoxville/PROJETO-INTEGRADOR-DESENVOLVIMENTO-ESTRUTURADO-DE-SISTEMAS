@@ -151,16 +151,9 @@
                                                       </Group>
                                                       <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
                                                   </Group>
-                                                  <Group type="102" attributes="0">
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jtextValorUN" min="-2" pref="157" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jtextValorTotal" min="-2" pref="173" max="-2" attributes="0"/>
-                                                      </Group>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jtextValorTotal" min="-2" pref="173" max="-2" attributes="0"/>
                                                   </Group>
                                                   <Group type="102" alignment="1" attributes="0">
                                                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
@@ -247,15 +240,9 @@
                           <EmptySpace pref="24" max="32767" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="227" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jtextValorUN" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jtextValorTotal" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jtextValorTotal" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jbtnSalvar" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -458,14 +445,6 @@
                     </Property>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel9">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="12" style="1"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Valor Un. (R$):"/>
-                  </Properties>
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel10">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -475,8 +454,6 @@
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="jtextValorTotal">
-                </Component>
-                <Component class="javax.swing.JTextField" name="jtextValorUN">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel11">
                 </Component>
