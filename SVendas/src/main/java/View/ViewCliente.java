@@ -4,6 +4,9 @@
  */
 package View;
 
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Marcos
@@ -59,7 +62,7 @@ public class ViewCliente extends javax.swing.JFrame {
         jTextPesquisar = new javax.swing.JTextField();
         jbtnPesquisar = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jTextData = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Clientes:");
@@ -168,6 +171,11 @@ public class ViewCliente extends javax.swing.JFrame {
         jbtnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_excluir.png"))); // NOI18N
         jbtnSalvar.setText("Salvar");
         jbtnSalvar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnSalvarActionPerformed(evt);
+            }
+        });
 
         jbtnExcluir.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jbtnExcluir.setForeground(new java.awt.Color(255, 0, 0));
@@ -187,7 +195,7 @@ public class ViewCliente extends javax.swing.JFrame {
         jLabel12.setText("Data de Nascimento:");
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            jTextData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -270,7 +278,7 @@ public class ViewCliente extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel12)
-                                    .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(jTextData, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
@@ -316,7 +324,7 @@ public class ViewCliente extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel12)
                         .addGap(4, 4, 4)
-                        .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jTextData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -350,6 +358,61 @@ public class ViewCliente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSalvarActionPerformed
+        String CPF = jTextCPF.getText();
+        String nome = jTextNome.getText();
+        String tel = jTextTelefone.getText();
+        String end = jTextEndereco.getText();
+        String cid = jTextCidade.getText();
+        String bairro = jTextBairro.getText();
+        String CEP = jTextCEP.getText();
+        String data = jTextData.getText();
+        boolean validaCPF = false;
+        boolean validaNome = false;
+        boolean validaTel = false;
+        boolean validaEnd = false;
+        boolean validaCid = false;
+        boolean validaBairro = false;
+        boolean validaCEP = false;
+        boolean validaData = false;
+        
+        if (CPF==null || CPF.equals("") || CPF.equals("   .   .   -  ")) {
+            jTextCPF.setBackground(Color.red);
+            validaCPF = true;
+        }
+        if (nome.equals("")) {
+            jTextNome.setBackground(Color.red);
+            validaNome = true;
+        }
+        if (tel==null || tel.equals("") || tel.equals("(  )     -    ")) {
+            jTextTelefone.setBackground(Color.red);
+            validaTel = true;
+        }
+        if (end.equals("")) {
+            jTextEndereco.setBackground(Color.red);
+            validaEnd = true;
+        }
+        if (cid.equals("")) {
+            jTextCidade.setBackground(Color.red);
+            validaCid = true;
+        }
+        if (bairro.equals("")) {
+            jTextBairro.setBackground(Color.red);
+            validaBairro = true;
+        }
+        if (CEP.equals("")) {
+            jTextCEP.setBackground(Color.red);
+            validaCEP = true;
+        }
+        if (data==null || data.equals("") || data.equals("  /  /    ")) {
+            jTextData.setBackground(Color.red);
+            validaData = true;
+        }
+        if (validaCPF || validaNome || validaTel || validaEnd || validaCid || validaBairro || validaCEP || validaData) {
+            JOptionPane.showMessageDialog(this,"Preencha os campos obrigatórios.");           
+        }
+    }//GEN-LAST:event_jbtnSalvarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -389,7 +452,6 @@ public class ViewCliente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboSexo;
     private javax.swing.JComboBox<String> jComboUF;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -410,6 +472,7 @@ public class ViewCliente extends javax.swing.JFrame {
     private javax.swing.JFormattedTextField jTextCPF;
     private javax.swing.JTextField jTextCidade;
     private javax.swing.JTextField jTextCod;
+    private javax.swing.JFormattedTextField jTextData;
     private javax.swing.JTextField jTextEndereco;
     private javax.swing.JTextField jTextNome;
     private javax.swing.JTextField jTextPesquisar;
