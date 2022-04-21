@@ -122,6 +122,11 @@ public class ViewProduto extends javax.swing.JFrame {
         jbtnCancelar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_cancelar.png"))); // NOI18N
         jbtnCancelar.setText("Cancelar");
         jbtnCancelar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtnCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnCancelarActionPerformed(evt);
+            }
+        });
 
         jbtnNovo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jbtnNovo.setForeground(new java.awt.Color(0, 0, 255));
@@ -249,6 +254,10 @@ public class ViewProduto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbtnCancelarActionPerformed
 
     /**
      * @param args the command line arguments
