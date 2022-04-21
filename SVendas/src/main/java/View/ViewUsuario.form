@@ -99,7 +99,7 @@
                                           <Group type="102" alignment="0" attributes="0">
                                               <Component id="jtextNome" min="-2" pref="378" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="jbtnSalvar1" min="-2" pref="84" max="-2" attributes="0"/>
+                                              <Component id="jbtnPesquisar" min="-2" pref="84" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -140,7 +140,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jtextNome" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jbtnSalvar1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jbtnPesquisar" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="314" max="-2" attributes="0"/>
@@ -284,6 +284,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnSalvarActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jbtnCancelar">
           <Properties>
@@ -348,7 +351,7 @@
         </Component>
         <Component class="javax.swing.JTextField" name="jtextNome1">
         </Component>
-        <Component class="javax.swing.JButton" name="jbtnSalvar1">
+        <Component class="javax.swing.JButton" name="jbtnPesquisar">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial" size="12" style="1"/>
@@ -367,7 +370,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnSalvar1ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnPesquisarActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

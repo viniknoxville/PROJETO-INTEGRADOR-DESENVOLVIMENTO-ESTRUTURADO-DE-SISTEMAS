@@ -4,6 +4,9 @@
  */
 package View;
 
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Marcos
@@ -33,7 +36,7 @@ public class ViewVendas extends javax.swing.JFrame {
         abaCadastro = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jtextCodCliente = new javax.swing.JTextField();
+        jtextCPF = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         uJComboBox2 = new componentes.UJComboBox();
         jLabel5 = new javax.swing.JLabel();
@@ -41,7 +44,7 @@ public class ViewVendas extends javax.swing.JFrame {
         jtextCodProduto = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jtextNvenda = new javax.swing.JTextField();
-        jtextPesquisar = new javax.swing.JTextField();
+        jtextQuantidade = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jbtnPesquisar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -56,7 +59,7 @@ public class ViewVendas extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
-        jFormattedTextField1 = new javax.swing.JFormattedTextField();
+        jtextData = new javax.swing.JFormattedTextField();
 
         jLabel3.setText("jLabel3");
 
@@ -133,6 +136,11 @@ public class ViewVendas extends javax.swing.JFrame {
         jbtnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_salvar.png"))); // NOI18N
         jbtnSalvar.setText("Salvar");
         jbtnSalvar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnSalvarActionPerformed(evt);
+            }
+        });
 
         jbtnNovo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jbtnNovo.setForeground(new java.awt.Color(0, 0, 255));
@@ -151,7 +159,7 @@ public class ViewVendas extends javax.swing.JFrame {
         jLabel15.setText("Data:");
 
         try {
-            jFormattedTextField1.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
+            jtextData.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
@@ -173,7 +181,7 @@ public class ViewVendas extends javax.swing.JFrame {
                                 .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel1)
-                                    .addComponent(jtextCodCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
+                                    .addComponent(jtextCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 107, Short.MAX_VALUE)
                                     .addComponent(jtextCodProduto))
                                 .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(abaCadastroLayout.createSequentialGroup()
@@ -205,9 +213,9 @@ public class ViewVendas extends javax.swing.JFrame {
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                     .addComponent(jbtnPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jtextPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addComponent(jtextQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addComponent(jLabel15)
-                                                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(jtextData, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGap(128, 128, 128))
                                         .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel10)
@@ -242,7 +250,7 @@ public class ViewVendas extends javax.swing.JFrame {
                                 .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(abaCadastroLayout.createSequentialGroup()
                                         .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jtextCodCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jtextCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(18, 18, 18)
                                         .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -269,11 +277,11 @@ public class ViewVendas extends javax.swing.JFrame {
                     .addGroup(abaCadastroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jtextNvenda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jbtnPesquisar)
-                        .addComponent(jtextPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jtextQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(29, 29, 29)
                 .addComponent(jLabel15)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jFormattedTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jtextData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -321,6 +329,42 @@ public class ViewVendas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnCancelarActionPerformed
 
+    private void jbtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSalvarActionPerformed
+        String CPF = jtextCPF.getText();
+        String codprod = jtextCodProduto.getText();
+        String numvenda = jtextNvenda.getText();
+        String quantidade = jtextQuantidade.getText();
+        String data = jtextData.getText();
+        boolean validaCPF = false;
+        boolean validaCodprod = false;
+        boolean validaNumvenda = false;
+        boolean validaQuantidade = false;
+        boolean validaData = false;
+        if (CPF==null || CPF.equals("") || CPF.equals("   .   .   -  ")) {
+            jtextCPF.setBackground(Color.red);
+            validaCPF = true;
+        }
+        if (codprod.equals("")) {
+            jtextCodProduto.setBackground(Color.red);
+            validaCodprod = true;
+        }
+        if (numvenda.equals("")) {
+            jtextNvenda.setBackground(Color.red);
+            validaNumvenda = true;
+        }
+        if (quantidade.equals("")) {
+            jtextQuantidade.setBackground(Color.red);
+            validaQuantidade = true;
+        }
+        if (data==null || data.equals("") || data.equals("  /  /    ")) {
+            jtextData.setBackground(Color.red);
+            validaData = true;
+        }
+        if (validaCPF || validaCodprod || validaNumvenda || validaQuantidade || validaData) {
+            JOptionPane.showMessageDialog(this,"Preencha os campos obrigatórios.");
+        }
+    }//GEN-LAST:event_jbtnSalvarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -358,7 +402,6 @@ public class ViewVendas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel abaCadastro;
-    private javax.swing.JFormattedTextField jFormattedTextField1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -381,10 +424,11 @@ public class ViewVendas extends javax.swing.JFrame {
     private javax.swing.JButton jbtnNovo;
     private javax.swing.JButton jbtnPesquisar;
     private javax.swing.JButton jbtnSalvar;
-    private javax.swing.JTextField jtextCodCliente;
+    private javax.swing.JTextField jtextCPF;
     private javax.swing.JTextField jtextCodProduto;
+    private javax.swing.JFormattedTextField jtextData;
     private javax.swing.JTextField jtextNvenda;
-    private javax.swing.JTextField jtextPesquisar;
+    private javax.swing.JTextField jtextQuantidade;
     private javax.swing.JTextField jtextValorTotal;
     private componentes.UJComboBox uJComboBox2;
     // End of variables declaration//GEN-END:variables

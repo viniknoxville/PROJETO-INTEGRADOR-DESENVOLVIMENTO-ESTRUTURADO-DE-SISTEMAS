@@ -4,6 +4,9 @@
  */
 package View;
 
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Marcos
@@ -45,7 +48,7 @@ public class ViewUsuario extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jtextNome1 = new javax.swing.JTextField();
-        jbtnSalvar1 = new javax.swing.JButton();
+        jbtnPesquisar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Usuários:");
@@ -103,6 +106,11 @@ public class ViewUsuario extends javax.swing.JFrame {
         jbtnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_salvar.png"))); // NOI18N
         jbtnSalvar.setText("Salvar");
         jbtnSalvar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnSalvarActionPerformed(evt);
+            }
+        });
 
         jbtnCancelar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jbtnCancelar.setForeground(new java.awt.Color(0, 0, 255));
@@ -127,14 +135,14 @@ public class ViewUsuario extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setText("Nome:");
 
-        jbtnSalvar1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jbtnSalvar1.setForeground(new java.awt.Color(0, 0, 255));
-        jbtnSalvar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_pesquisar.png"))); // NOI18N
-        jbtnSalvar1.setText("Pesquisar");
-        jbtnSalvar1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jbtnSalvar1.addActionListener(new java.awt.event.ActionListener() {
+        jbtnPesquisar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jbtnPesquisar.setForeground(new java.awt.Color(0, 0, 255));
+        jbtnPesquisar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_pesquisar.png"))); // NOI18N
+        jbtnPesquisar.setText("Pesquisar");
+        jbtnPesquisar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtnPesquisar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbtnSalvar1ActionPerformed(evt);
+                jbtnPesquisarActionPerformed(evt);
             }
         });
 
@@ -183,7 +191,7 @@ public class ViewUsuario extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createSequentialGroup()
                                             .addComponent(jtextNome, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGap(18, 18, 18)
-                                            .addComponent(jbtnSalvar1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addComponent(jbtnPesquisar, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addGap(0, 0, Short.MAX_VALUE))))
                         .addContainerGap(33, Short.MAX_VALUE))))
         );
@@ -214,7 +222,7 @@ public class ViewUsuario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtextNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jbtnSalvar1))
+                    .addComponent(jbtnPesquisar))
                 .addGap(35, 35, 35)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(40, 40, 40)
@@ -247,9 +255,34 @@ public class ViewUsuario extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnCancelarActionPerformed
 
-    private void jbtnSalvar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSalvar1ActionPerformed
+    private void jbtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnPesquisarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jbtnSalvar1ActionPerformed
+    }//GEN-LAST:event_jbtnPesquisarActionPerformed
+
+    private void jbtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSalvarActionPerformed
+        String nome = jtextNome1.getText();
+        String login = jtextLogin.getText();
+        String senha = jpassSenha.getText();
+        boolean validaNome = false;
+        boolean validaLogin = false;
+        boolean validaSenha = false;
+        
+        if (nome.equals("")) {
+            jtextNome1.setBackground(Color.red);
+            validaNome = true;
+        }
+        if (login.equals("")) {
+            jtextLogin.setBackground(Color.red);
+            validaLogin = true;
+        }
+        if (senha.equals("")) {
+            jpassSenha.setBackground(Color.red);
+            validaSenha = true;
+        }
+        if (validaNome || validaLogin || validaSenha) {
+            JOptionPane.showMessageDialog(this,"Preencha os campos obrigatórios.");
+        }
+    }//GEN-LAST:event_jbtnSalvarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -318,8 +351,8 @@ public class ViewUsuario extends javax.swing.JFrame {
     private javax.swing.JButton jbtnCancelar;
     private javax.swing.JButton jbtnExcluir;
     private javax.swing.JButton jbtnNovo;
+    private javax.swing.JButton jbtnPesquisar;
     private javax.swing.JButton jbtnSalvar;
-    private javax.swing.JButton jbtnSalvar1;
     private javax.swing.JPasswordField jpassSenha;
     private javax.swing.JTextField jtextCod;
     private javax.swing.JTextField jtextLogin;

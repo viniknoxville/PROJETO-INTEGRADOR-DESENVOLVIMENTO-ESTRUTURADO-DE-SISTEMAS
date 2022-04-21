@@ -4,6 +4,9 @@
  */
 package View;
 
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Marcos
@@ -151,6 +154,11 @@ public class ViewProduto extends javax.swing.JFrame {
         jbtnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_salvar.png"))); // NOI18N
         jbtnSalvar.setText("Salvar");
         jbtnSalvar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jbtnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnSalvarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -258,6 +266,31 @@ public class ViewProduto extends javax.swing.JFrame {
     private void jbtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCancelarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnCancelarActionPerformed
+
+    private void jbtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSalvarActionPerformed
+        String produto = jtextNomeProduto.getText();
+        String estoque = jtextEstoque.getText();
+        String valor = jtextValor.getText();
+        boolean validaProduto = false;
+        boolean validaEstoque = false;
+        boolean validaValor = false;
+        
+         if (produto.equals("")) {
+            jtextNomeProduto.setBackground(Color.red);
+            validaProduto = true;
+        }
+          if (estoque.equals("")) {
+            jtextEstoque.setBackground(Color.red);
+            validaEstoque = true;
+        }
+           if (valor.equals("")) {
+            jtextValor.setBackground(Color.red);
+            validaValor = true;
+        }
+           if (validaProduto || validaEstoque || validaValor) {
+               JOptionPane.showMessageDialog(this,"Preencha os campos obrigatórios.");
+           }
+    }//GEN-LAST:event_jbtnSalvarActionPerformed
 
     /**
      * @param args the command line arguments
