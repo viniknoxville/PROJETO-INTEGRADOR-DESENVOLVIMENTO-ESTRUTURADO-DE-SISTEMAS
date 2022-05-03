@@ -44,7 +44,6 @@ public class ViewCliente extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jTextBairro = new javax.swing.JTextField();
-        jTextCEP = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         jComboSexo = new javax.swing.JComboBox<>();
         jLabel9 = new javax.swing.JLabel();
@@ -63,6 +62,7 @@ public class ViewCliente extends javax.swing.JFrame {
         jbtnPesquisar = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
         jTextData = new javax.swing.JFormattedTextField();
+        jTextCEP = new javax.swing.JFormattedTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Cadastro de Clientes:");
@@ -77,8 +77,20 @@ public class ViewCliente extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setText("Nome:");
 
+        jTextNome.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextNomeFocusLost(evt);
+            }
+        });
+
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setText("Endereço:");
+
+        jTextEndereco.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextEnderecoFocusLost(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setText("Cidade:");
@@ -107,6 +119,11 @@ public class ViewCliente extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jTextCPF.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextCPFFocusLost(evt);
+            }
+        });
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel10.setText("Telefone:");
@@ -205,6 +222,12 @@ public class ViewCliente extends javax.swing.JFrame {
             ex.printStackTrace();
         }
 
+        try {
+            jTextCEP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
+        } catch (java.text.ParseException ex) {
+            ex.printStackTrace();
+        }
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -273,9 +296,9 @@ public class ViewCliente extends javax.swing.JFrame {
                                         .addComponent(jLabel6))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jComboUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jTextCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jTextCEP, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jLabel10)
                                             .addComponent(jTextTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -283,7 +306,7 @@ public class ViewCliente extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel12)
                                     .addComponent(jTextData, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(24, Short.MAX_VALUE))))
         );
 
         jPanel1Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jbtnAlterar, jbtnCancelar, jbtnExcluir, jbtnNovo, jbtnPesquisar, jbtnSalvar});
@@ -323,8 +346,8 @@ public class ViewCliente extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextCidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboUF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jTextTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextCEP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel12)
                         .addGap(4, 4, 4)
@@ -405,7 +428,7 @@ public class ViewCliente extends javax.swing.JFrame {
             jTextBairro.setBackground(Color.red);
             validaBairro = true;
         }
-        if (CEP.equals("")) {
+        if (CEP==null || CEP.equals("") || CEP.equals("     -   ")) {
             jTextCEP.setBackground(Color.red);
             validaCEP = true;
         }
@@ -421,6 +444,26 @@ public class ViewCliente extends javax.swing.JFrame {
     private void jbtnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCancelarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jbtnCancelarActionPerformed
+
+    private void jTextNomeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextNomeFocusLost
+            if (!jTextNome.equals("")) {
+            jTextNome.setBackground(Color.white);
+        }
+    }//GEN-LAST:event_jTextNomeFocusLost
+
+    private void jTextCPFFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextCPFFocusLost
+            if ((jTextCPF.getText().replace(".", "").replace("-", "").trim().length() == 11)) {
+                jTextCPF.setBackground(Color.white);
+            } else {
+                jTextCPF.setBackground(Color.red);
+            }
+    }//GEN-LAST:event_jTextCPFFocusLost
+
+    private void jTextEnderecoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextEnderecoFocusLost
+            if (!jTextEndereco.equals("")) {
+            jTextEndereco.setBackground(Color.white);
+            }
+    }//GEN-LAST:event_jTextEnderecoFocusLost
 
     /**
      * @param args the command line arguments
@@ -476,7 +519,7 @@ public class ViewCliente extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextBairro;
-    private javax.swing.JTextField jTextCEP;
+    private javax.swing.JFormattedTextField jTextCEP;
     private javax.swing.JFormattedTextField jTextCPF;
     private javax.swing.JTextField jTextCidade;
     private javax.swing.JTextField jTextCod;
