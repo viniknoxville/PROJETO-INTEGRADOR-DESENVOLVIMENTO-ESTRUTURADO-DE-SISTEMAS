@@ -42,7 +42,6 @@ public class ViewProduto extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jtextEstoque = new javax.swing.JTextField();
-        jtextValor = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jtextPesquisar = new javax.swing.JTextField();
@@ -53,6 +52,7 @@ public class ViewProduto extends javax.swing.JFrame {
         jbtnAlterar = new javax.swing.JButton();
         jbtnExcluir = new javax.swing.JButton();
         jbtnSalvar = new javax.swing.JButton();
+        jtextValor = new javax.swing.JFormattedTextField();
 
         jButton1.setText("jButton1");
 
@@ -69,6 +69,12 @@ public class ViewProduto extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setText("Nome Produto:");
 
+        jtextNomeProduto.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtextNomeProdutoFocusLost(evt);
+            }
+        });
+
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setText("Categoria:");
 
@@ -79,6 +85,12 @@ public class ViewProduto extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setText("Estoque:");
+
+        jtextEstoque.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtextEstoqueFocusLost(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -160,6 +172,13 @@ public class ViewProduto extends javax.swing.JFrame {
             }
         });
 
+        jtextValor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter()));
+        jtextValor.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtextValorFocusLost(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -194,7 +213,6 @@ public class ViewProduto extends javax.swing.JFrame {
                             .addGap(18, 18, 18)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel4)
-                                .addComponent(jtextValor, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(jPanel1Layout.createSequentialGroup()
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel2)
@@ -202,7 +220,8 @@ public class ViewProduto extends javax.swing.JFrame {
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel3)
-                                        .addComponent(jComboCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(jComboCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jtextValor, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
@@ -292,6 +311,24 @@ public class ViewProduto extends javax.swing.JFrame {
            }
     }//GEN-LAST:event_jbtnSalvarActionPerformed
 
+    private void jtextNomeProdutoFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtextNomeProdutoFocusLost
+        if (!jtextNomeProduto.equals("")) {
+             jtextNomeProduto.setBackground(Color.white);
+         }
+    }//GEN-LAST:event_jtextNomeProdutoFocusLost
+
+    private void jtextEstoqueFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtextEstoqueFocusLost
+        if (!jtextEstoque.equals("")) {
+             jtextEstoque.setBackground(Color.white);
+         }
+    }//GEN-LAST:event_jtextEstoqueFocusLost
+
+    private void jtextValorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtextValorFocusLost
+        if (!jtextValor.equals("")) {
+             jtextValor.setBackground(Color.white);
+         }
+    }//GEN-LAST:event_jtextValorFocusLost
+
     /**
      * @param args the command line arguments
      */
@@ -351,6 +388,6 @@ public class ViewProduto extends javax.swing.JFrame {
     private javax.swing.JTextField jtextEstoque;
     private javax.swing.JTextField jtextNomeProduto;
     private javax.swing.JTextField jtextPesquisar;
-    private javax.swing.JTextField jtextValor;
+    private javax.swing.JFormattedTextField jtextValor;
     // End of variables declaration//GEN-END:variables
 }

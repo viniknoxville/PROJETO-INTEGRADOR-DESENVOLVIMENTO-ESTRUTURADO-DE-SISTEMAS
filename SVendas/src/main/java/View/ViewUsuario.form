@@ -230,6 +230,9 @@
           </SubComponents>
         </Container>
         <Component class="javax.swing.JPasswordField" name="jpassSenha">
+          <Events>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jpassSenhaFocusLost"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
@@ -311,6 +314,9 @@
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="jtextLogin">
+          <Events>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtextLoginFocusLost"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jbtnNovo">
           <Properties>
@@ -350,6 +356,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jtextNome1">
+          <Events>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jtextNome1FocusLost"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jbtnPesquisar">
           <Properties>

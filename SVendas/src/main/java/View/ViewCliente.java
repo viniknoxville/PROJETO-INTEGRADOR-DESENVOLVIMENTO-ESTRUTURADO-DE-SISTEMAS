@@ -95,6 +95,12 @@ public class ViewCliente extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setText("Cidade:");
 
+        jTextCidade.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextCidadeFocusLost(evt);
+            }
+        });
+
         jComboUF.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecione:", "RO", "AC", "AM", "RR", "PA", "AP", "TO", "MA", "PI", "CE", "RN", "PB", "PE", "AL", "SE", "BA", "MG", "ES", "RJ", "SP", "PR", "SC", "RS", "MS", "GO", "DF" }));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -105,6 +111,12 @@ public class ViewCliente extends javax.swing.JFrame {
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel7.setText("UF:");
+
+        jTextBairro.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextBairroFocusLost(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel8.setText("Sexo:");
@@ -133,6 +145,11 @@ public class ViewCliente extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jTextTelefone.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextTelefoneFocusLost(evt);
+            }
+        });
 
         jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -221,12 +238,22 @@ public class ViewCliente extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jTextData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextDataActionPerformed(evt);
+            }
+        });
 
         try {
             jTextCEP.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        jTextCEP.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jTextCEPFocusLost(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -464,6 +491,42 @@ public class ViewCliente extends javax.swing.JFrame {
             jTextEndereco.setBackground(Color.white);
             }
     }//GEN-LAST:event_jTextEnderecoFocusLost
+
+    private void jTextCEPFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextCEPFocusLost
+        if ((jTextCEP.getText().replace("-", "").trim().length()==8)) {
+            jTextCEP.setBackground(Color.white);
+        } else {
+            jTextCEP.setBackground(Color.red);
+        }
+    }//GEN-LAST:event_jTextCEPFocusLost
+
+    private void jTextTelefoneFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextTelefoneFocusLost
+        if ((jTextTelefone.getText().replace("(", "").replace(")", "").replace("-","").trim().length()==11)) {
+            jTextTelefone.setBackground(Color.white);
+        } else {
+            jTextTelefone.setBackground(Color.red);
+        }
+    }//GEN-LAST:event_jTextTelefoneFocusLost
+
+    private void jTextDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextDataActionPerformed
+        if ((jTextData.getText().replace("/", "").trim().length()==8)) {
+            jTextData.setBackground(Color.white);
+        } else {
+            jTextData.setBackground(Color.red);
+        }
+    }//GEN-LAST:event_jTextDataActionPerformed
+
+    private void jTextBairroFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextBairroFocusLost
+         if (!jTextBairro.equals("")) {
+             jTextBairro.setBackground(Color.white);
+         }
+    }//GEN-LAST:event_jTextBairroFocusLost
+
+    private void jTextCidadeFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextCidadeFocusLost
+          if (!jTextCidade.equals("")) {
+             jTextCidade.setBackground(Color.white);
+         }
+    }//GEN-LAST:event_jTextCidadeFocusLost
 
     /**
      * @param args the command line arguments

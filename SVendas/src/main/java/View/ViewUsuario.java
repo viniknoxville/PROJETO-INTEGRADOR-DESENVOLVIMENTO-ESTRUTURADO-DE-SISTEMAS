@@ -89,6 +89,12 @@ public class ViewUsuario extends javax.swing.JFrame {
             jTable1.getColumnModel().getColumn(0).setMaxWidth(90);
         }
 
+        jpassSenha.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jpassSenhaFocusLost(evt);
+            }
+        });
+
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setText("Nome:");
 
@@ -123,6 +129,12 @@ public class ViewUsuario extends javax.swing.JFrame {
             }
         });
 
+        jtextLogin.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtextLoginFocusLost(evt);
+            }
+        });
+
         jbtnNovo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jbtnNovo.setForeground(new java.awt.Color(0, 0, 255));
         jbtnNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/btn_novo.png"))); // NOI18N
@@ -134,6 +146,12 @@ public class ViewUsuario extends javax.swing.JFrame {
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setText("Nome:");
+
+        jtextNome1.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                jtextNome1FocusLost(evt);
+            }
+        });
 
         jbtnPesquisar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jbtnPesquisar.setForeground(new java.awt.Color(0, 0, 255));
@@ -283,6 +301,24 @@ public class ViewUsuario extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this,"Preencha os campos obrigatórios.");
         }
     }//GEN-LAST:event_jbtnSalvarActionPerformed
+
+    private void jtextNome1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtextNome1FocusLost
+        if (!jtextNome1.equals("")) {
+             jtextNome1.setBackground(Color.white);
+         }
+    }//GEN-LAST:event_jtextNome1FocusLost
+
+    private void jtextLoginFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jtextLoginFocusLost
+        if (!jtextLogin.equals("")) {
+             jtextLogin.setBackground(Color.white);
+         }
+    }//GEN-LAST:event_jtextLoginFocusLost
+
+    private void jpassSenhaFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jpassSenhaFocusLost
+        if (!jpassSenha.equals("")) {
+             jpassSenha.setBackground(Color.white);
+         }
+    }//GEN-LAST:event_jpassSenhaFocusLost
 
     /**
      * @param args the command line arguments
