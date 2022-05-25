@@ -1,0 +1,62 @@
+/* Lógico_2: */
+
+CREATE TABLE CLIENTE (
+    Nome varchar(40),
+    Sexo varchar(20),
+    Endereco varchar(80),
+    EstadoCivil varchar(20),
+    DataNasc date,
+    Codigo int PRIMARY KEY,
+    cpf varchar(14),
+    Telefone varchar(11)
+);
+
+CREATE TABLE PRODUTO (
+    Nome varchar(40),
+    Categoria varchar(40),
+    Codigo int PRIMARY KEY,
+    Estoque int
+);
+
+CREATE TABLE VENDA (
+    Codigo int PRIMARY KEY,
+    Data Date,
+    CodVendedor int,
+    CodCliente int
+);
+
+CREATE TABLE VENDEDOR (
+    Codigo int PRIMARY KEY,
+    Nome varchar(40),
+    Login varchar(40),
+    Senha varchar(40),
+    cpf varchar(20)
+);
+
+CREATE TABLE ITENS_VENDA (
+    Codigo int PRIMARY KEY,
+    Quantidade int,
+    Preco Double,
+    CodVenda int,
+    CodProduto int
+);
+ 
+ALTER TABLE VENDA ADD CONSTRAINT FK_VENDA_2
+    FOREIGN KEY (CodVendedor)
+    REFERENCES VENDEDOR (Codigo)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE VENDA ADD CONSTRAINT FK_VENDA_3
+    FOREIGN KEY (CodCliente)
+    REFERENCES CLIENTE (Codigo)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE ITENS_VENDA ADD CONSTRAINT FK_ITENS_VENDA_2
+    FOREIGN KEY (CodVenda)
+    REFERENCES VENDA (Codigo)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE ITENS_VENDA ADD CONSTRAINT FK_ITENS_VENDA_3
+    FOREIGN KEY (CodProduto)
+    REFERENCES PRODUTO (Codigo)
+    ON DELETE CASCADE;
